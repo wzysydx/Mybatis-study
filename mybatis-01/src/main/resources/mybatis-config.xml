@@ -18,6 +18,7 @@
         </environment>
     </environments>
 
+    <!--attention: do not use .-->
     <mappers>
         <mapper resource="com/kuang/dao/UserMapper.xml"/>
     </mappers>
