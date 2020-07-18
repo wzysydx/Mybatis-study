@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+    <!--configuration hexin peizhi wenjian-->
+    <properties resource="db.properties"/>
+
+    <!--可以给实体类写别�?-->
+    <typeAliases>
+        <typeAlias type="com.kuang.pojo.User" alias="User"/>
+<!--        <package name="com.kuang.pojo.User"/>-->
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--attention: do not use .-->
+    <mappers>
+        <!--方式�?�?-->
+<!--        <mapper resource="com/kuang/dao/UserMapper.xml"/>-->
+        <!--方式二：-->
+<!--        <mapper class="com.kuang.dao.UserMapper"/>-->
+        <!--方式�?-->
+        <package name="com.kuang.dao"/>
+    </mappers>
+
+</configuration>
