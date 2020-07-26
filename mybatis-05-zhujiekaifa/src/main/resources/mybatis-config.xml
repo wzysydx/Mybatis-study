@@ -8,16 +8,16 @@
     <!--核心配置资源文件-->
     <properties resource="db.properties"/>
 
-    <!--settings的位置注�?,可以再控制台输出日志-->
+    <!--settings的位置注意,可以再控制台输出日志-->
     <settings>
-        <!--标准的日志功�?-->
-        <setting name="logImpl" value="LOG4J"/>
+        <!--标准的日志功能-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
     </settings>
 
-    <!--可以给实体类写别�?-->
+    <!--可以给实体类写别名-->
     <typeAliases>
 <!--        <typeAlias type="com.kuang.pojo.User" alias="User"/>-->
-        <package name="com.kuang.pojo"/>
+        <package name="com.kuang.pojo"/><!--默认首字母小写-->
     </typeAliases>
 
     <environments default="development">
@@ -32,14 +32,10 @@
         </environment>
     </environments>
 
-    <!--attention: do not use .-->
+    <!--绑定接口-->
     <mappers>
-        <!--方式�?�?-->
-<!--        <mapper resource="com/kuang/dao/UserMapper.xml"/>-->
-        <!--方式二：-->
-<!--        <mapper class="com.kuang.dao.UserMapper"/>-->
-        <!--方式�?-->
-        <package name="com.kuang.dao"/>
+        <mapper class="com.kuang.dao.UserMapper"/>
     </mappers>
+
 
 </configuration>
